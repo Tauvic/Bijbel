@@ -94,9 +94,9 @@ def read_bible(driver, bible, books, timeout=15):
         # Save every completed book
         df = pd.DataFrame.from_dict(verses.values())
         if os.path.exists(file_name):
-            df.to_csv('%s-Bijbel.csv' % bible, index=False, sep="|", mode='a', header=False)
+            df.to_csv('data/%s-Bijbel.csv' % bible, index=False, sep="|", mode='a', header=False)
         else:
-            df.to_csv('%s-Bijbel.csv' % bible, index=False, sep="|", mode='w', header=True)
+            df.to_csv('data/%s-Bijbel.csv' % bible, index=False, sep="|", mode='w', header=True)
 
 
 def process_bible(bible, books, timeout=15, retries=0, cooldown=30):
